@@ -27,12 +27,11 @@ Console.WriteLine(rocket);
 
 for (int i = 10; i >= 0; i--)
 {
-    //Console.Write(i);
     Console.Clear();
     Console.Write("Landing in " + i);
     Console.WriteLine('\n');
     Console.WriteLine(rocket);
-    rocket = '\n' + rocket;
+    rocket = "\r\n" + rocket;
     Thread.Sleep(1000);
 }
 
