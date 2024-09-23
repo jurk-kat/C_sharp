@@ -1,28 +1,53 @@
-﻿// How to get a random number:
-Random random = new Random();
-int randomNumber = random.Next(1, 11);
+﻿//LOOPS
 
-// Try.Parse
-Console.WriteLine("Give me a number:");
-string inputString = Console.ReadLine();
+//// For loop
+//// count up
 
-int num = 0;
-bool isNumber = int.TryParse(inputString, out num);
+//for (int i=1; i<10; i++) // i ++ is the same as i = i+1
+//{
+//    Console.WriteLine("i is " + i);
+//}
+//Console.WriteLine("End of program");
+//Console.ReadKey();
 
-if (isNumber)
+//// count down
+//for (int i = 10; i >= 5; i--)
+//{
+//    Console.WriteLine("i is " + i);
+//}
+//Console.WriteLine("End of program");
+//Console.ReadKey();
+
+////nasobky 2
+//for (int i = 2; i <= 20; i = i + 2)
+//{
+//    Console.WriteLine("i is " + i);
+//}
+//Console.WriteLine("End of program");
+//Console.ReadKey();
+
+////mocniny 2
+//for (int i = 2; i <= 1000; i = i * 2)
+//{
+//    Console.WriteLine("i is " + i);
+//}
+//Console.WriteLine("End of program");
+//Console.ReadKey();
+
+// escape characters r and n, Thread.Sleep
+
+string myString = "Hi\r\nHi"; // in strings \ is an escape character, the char aftere it has a special function
+
+// \n - new line - works fine on Linux
+// \r - carriage return - \r\n works fine on Mac, Windows
+
+for (int i = 1; i <= 10; i++)
 {
-    if (num == randomNumber)
-    {
-        Console.WriteLine("Congratulations! You guessed right!");
-    }
-    else
-    {
-        Console.WriteLine("Luck was not on your side. Try again!");
-    }
+    Console.WriteLine("the counter \"i\" is " + i); // here \ has the function of saying that " is not end of the string
+    Console.WriteLine(myString);
+    Thread.Sleep(1000); // pauses the program for 1000 ms = 1s do not really use in production
 }
-else
-{
-    Console.WriteLine("Haha, you troll, you should have entered a number.");
-}
-
+Console.WriteLine("End of program");
 Console.ReadKey();
+
+
