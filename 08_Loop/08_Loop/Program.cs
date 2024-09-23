@@ -4,7 +4,7 @@ int randomNumber = random.Next(1, 11);
 
 // Try.Parse
 Console.WriteLine("Give me a number:");
-string inputString = Console.ReadLine(); // Corrected variable name from 'intputString' to 'inputString'
+string inputString = Console.ReadLine();
 
 int num = 0;
 bool isNumber = int.TryParse(inputString, out num);
@@ -25,8 +25,4 @@ else
     Console.WriteLine("Haha, you troll, you should have entered a number.");
 }
 
-// Optional: Uncomment if needed for testing
-// num++;
-// Console.WriteLine($"User entered number +1 {num}");
-
-Console.ReadKey(); // Optional, only if you want the console to wait for a key press before closing
+Console.ReadKey();
