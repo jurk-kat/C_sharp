@@ -11,36 +11,77 @@ Create a simple C# calculator program that performs basic arithmetic operations 
 
 */
 
-
-
-int num1;
-int num2;
-
-Console.WriteLine("Welcome to the Conditional-Based Calculator!" + '\n' + "Please enter a number:");
+//1 Prompt the user to enter first number
+Console.WriteLine("Welcome to the Conditional-Based Calculator!" + '\n' + "Please enter a (whole) number:");
 
 string inputString1 = Console.ReadLine();
+int num1 = 0;
 bool isNumber1 = int.TryParse(inputString1, out num1);
 
+// I can use the while loop here. If the inserted is not number, I can let the user repeat it until they enter an int.
+
+if (isNumber1 == false)
+{
+    while (isNumber1 == false)
+    {
+        Console.WriteLine("Something went wrong. Are you sure you entered a whole number? Please, try again:");
+        inputString1 = Console.ReadLine();
+        isNumber1 = int.TryParse(inputString1, out num1);
+    }
+}
+
+
+//1 Prompt the user to enter second number
 Console.WriteLine("Now enter second number:");
 
 string inputString2 = Console.ReadLine();
-bool isNumber2 = int.TryParse(inputString1, out num2);
+int num2 = 0;
+bool isNumber2 = int.TryParse(inputString2, out num2);
 
+if (isNumber2 == false)
+{
+    while (isNumber2 == false)
+    {
+        Console.WriteLine("Something went wrong. Are you sure you entered a whole number? Please, try again:");
+        inputString2 = Console.ReadLine();
+        isNumber2 = int.TryParse(inputString2, out num2);
+    }
+}
+
+//2 Prompt the user to choose an arithmetic operation (Addition, Subtraction, Multiplication, Division).
 Console.WriteLine("What do you want to calculate?" + '\n' + "1 - Addition" + '\n' + "2 - Subtraction" + '\n' + "3 - Multiplication" + '\n' + "4 - Division");
 
-string inputString3= Console.ReadLine();
+string inputString3 = Console.ReadLine();
 
+// 3 Use conditional statements to perform the selected operation. + 4 Print the result of the operation to the console.
 
-//to be continued
-
-//if (isNumber1)
-//{
-//    Console.WriteLine("Yay! You have entered a number!");
-//}
-//else
-//{
-//    Console.WriteLine("Haha, you troll, you should have entered numbers!");
-//}
+if (inputString3 == "1")
+{
+    int result = num1 + num2;
+    Console.WriteLine("The sum of " + num1 + " and " + num2 + " is " + result);
+}
+if (inputString3 == "2")
+{
+    int result = num1 - num2;
+    Console.WriteLine("The substraction of " + num1 + " and " + num2 + " is " + result);
+}
+if (inputString3 == "3")
+{
+    int result = num1 * num2;
+    Console.WriteLine("The multiplication of " + num1 + " and " + num2 + " is " + result);
+}
+if (inputString3 == "4")
+{
+    if (num2 == 0) //5 Handle division by zero with a specific message.
+    {
+        Console.WriteLine("You cannot divide by zero!");
+    }
+    else
+    {
+        int result = num1 / num2;
+        Console.WriteLine("The division of " + num1 + " and " + num2 + " is " + result);
+    }
+}
 
 Console.ReadKey();
 
