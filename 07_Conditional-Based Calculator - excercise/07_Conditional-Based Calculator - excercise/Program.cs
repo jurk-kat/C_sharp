@@ -20,16 +20,12 @@ bool isNumber1 = int.TryParse(inputString1, out num1);
 
 // I can use the while loop here. If the inserted is not number, I can let the user repeat it until they enter an int.
 
-if (isNumber1 == false)
+while (isNumber1 == false)
 {
-    while (isNumber1 == false)
-    {
-        Console.WriteLine("Something went wrong. Are you sure you entered a whole number? Please, try again:");
-        inputString1 = Console.ReadLine();
-        isNumber1 = int.TryParse(inputString1, out num1);
-    }
+    Console.WriteLine("Something went wrong. Are you sure you entered a whole number? Please, try again:");
+    inputString1 = Console.ReadLine();
+    isNumber1 = int.TryParse(inputString1, out num1);
 }
-
 
 //1 Prompt the user to enter second number
 Console.WriteLine("Now enter second number:");
@@ -38,14 +34,11 @@ string inputString2 = Console.ReadLine();
 int num2 = 0;
 bool isNumber2 = int.TryParse(inputString2, out num2);
 
-if (isNumber2 == false)
+while (isNumber2 == false)
 {
-    while (isNumber2 == false)
-    {
-        Console.WriteLine("Something went wrong. Are you sure you entered a whole number? Please, try again:");
-        inputString2 = Console.ReadLine();
-        isNumber2 = int.TryParse(inputString2, out num2);
-    }
+    Console.WriteLine("Something went wrong. Are you sure you entered a whole number? Please, try again:");
+    inputString2 = Console.ReadLine();
+    isNumber2 = int.TryParse(inputString2, out num2);
 }
 
 //2 Prompt the user to choose an arithmetic operation (Addition, Subtraction, Multiplication, Division).
@@ -60,17 +53,17 @@ if (inputString3 == "1")
     int result = num1 + num2;
     Console.WriteLine("The sum of " + num1 + " and " + num2 + " is " + result);
 }
-if (inputString3 == "2")
+else if (inputString3 == "2")
 {
     int result = num1 - num2;
     Console.WriteLine("The substraction of " + num1 + " and " + num2 + " is " + result);
 }
-if (inputString3 == "3")
+else if (inputString3 == "3")
 {
     int result = num1 * num2;
     Console.WriteLine("The multiplication of " + num1 + " and " + num2 + " is " + result);
 }
-if (inputString3 == "4")
+else if (inputString3 == "4")
 {
     if (num2 == 0) //5 Handle division by zero with a specific message.
     {
@@ -81,6 +74,10 @@ if (inputString3 == "4")
         int result = num1 / num2;
         Console.WriteLine("The division of " + num1 + " and " + num2 + " is " + result);
     }
+}
+else
+{
+    Console.WriteLine("That is unknown operation."); // this will be possible to rewrite better also with the use of while
 }
 
 Console.ReadKey();

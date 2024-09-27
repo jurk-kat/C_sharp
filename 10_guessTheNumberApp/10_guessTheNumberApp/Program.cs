@@ -9,11 +9,12 @@ while (userGuess != secretNumber)
 {
     Console.WriteLine("Enter your guess");
     userGuess = int.Parse(Console.ReadLine());
+
     if (userGuess < secretNumber)
     {
         Console.WriteLine("Too low! Try again!");
     }
-    if (userGuess > secretNumber)
+    else if (userGuess > secretNumber)
     {
         Console.WriteLine("Too high! Try again!");
     }
