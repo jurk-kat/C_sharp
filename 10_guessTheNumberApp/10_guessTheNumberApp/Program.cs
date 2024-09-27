@@ -1,12 +1,16 @@
 ﻿// Guess the number Application
 
-int secretNumber = 42;
+Random random = new Random();
+
+int secretNumber = random.Next(1, 101);
 int userGuess = 0;
+int counter = 0;
 
 Console.WriteLine("Write a number I am thinking of between 1 and 100");
 
 while (userGuess != secretNumber)
 {
+    counter++;
     Console.WriteLine("Enter your guess");
     userGuess = int.Parse(Console.ReadLine());
 
@@ -20,7 +24,7 @@ while (userGuess != secretNumber)
     }
     else
     {
-        Console.WriteLine("Congratulations! You guessed the number correctly!");
+        Console.WriteLine("Congratulations! You guessed the number correctly! It took you " + counter + " tries.");
     }
 }
 
