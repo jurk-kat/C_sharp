@@ -78,7 +78,7 @@ while (counter <= 10) // condition, when the while will be running
     Console.WriteLine(counter);
     counter += 5;
 }
-*/
+
 
 // how to use the while loop correctly:
 // with bool
@@ -102,5 +102,50 @@ while (userChoice == "go")
     Console.WriteLine("Go for a mile. Wanna keep going?");
     userChoice = Console.ReadLine();
 }
+
+
+// DO WHILE LOOP
+// runs at least once and then checks the conditions. While first checkes the conditions, then runs.
+// while loop:      pre-test
+// do while loop:   post-test
+
+int i = 0;
+
+do
+{
+    i++;
+    Console.WriteLine(i);
+} while (i < 10);
+
+do
+{
+    Console.WriteLine(i);
+    i++;
+} while (i < 10);
+
+
+// this will still run once:
+int i = 15;
+
+do
+{
+    Console.WriteLine(i);
+    i++;
+} while (i < 10);
+
+*/
+
+//useful when we need a user input
+
+int number;
+
+do
+{
+    Console.WriteLine("User, enter a whole positive number");
+    number = int.Parse(Console.ReadLine());
+}
+while (number <= 0);
+
+Console.WriteLine("Finally!");
 
 Console.ReadLine();
