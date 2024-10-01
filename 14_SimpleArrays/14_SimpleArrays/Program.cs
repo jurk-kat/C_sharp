@@ -28,3 +28,18 @@ Console.WriteLine(myIntArray[3]);
 int[] myIntArray2 = [1,2,3,4,5];
 
 string[] weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+// 2D arrays
+int[,] Array2DDeclaration = new int[3, 3];
+// [0] [0] [0]
+// [0] [0] [0]
+// [0] [0] [0]
+
+//3D array - it is a cube
+int[,,] Array3DDeclaration = new int[3, 3, 3];
+
+int[,] array2DInitialized = { { 1, 2 }, { 3, 4 }, };
+// [1] [2]
+// [3] [4]
+
+Console.WriteLine(array2DInitialized[0,0]);
