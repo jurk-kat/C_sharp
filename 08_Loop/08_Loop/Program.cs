@@ -133,8 +133,6 @@ do
     i++;
 } while (i < 10);
 
-*/
-
 //useful when we need a user input
 
 int number;
@@ -147,5 +145,22 @@ do
 while (number <= 0);
 
 Console.WriteLine("Finally!");
+
+*/
+
+// FOR EACH LOOP
+string[] weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+Console.WriteLine("length of weekdays arrays is: " + weekDays.Length + "\r\n");
+
+//for (int i = 0; i < weekDays.Length; i++)
+//{
+//    Console.WriteLine(weekDays[i]);
+//}
+
+foreach (var day in weekDays) // foreach (string day in weekDays)
+{
+    Console.WriteLine(day);
+}
 
 Console.ReadLine();
