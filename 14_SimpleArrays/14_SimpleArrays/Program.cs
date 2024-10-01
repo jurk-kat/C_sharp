@@ -1,4 +1,6 @@
-﻿int num1 = 0;
+﻿/*
+
+int num1 = 0;
 int num2 = 0;
 int num3 = 0;
 int num4 = 0;
@@ -38,8 +40,10 @@ int[,] Array2DDeclaration = new int[3, 3];
 //3D array - it is a cube
 int[,,] Array3DDeclaration = new int[3, 3, 3];
 
-int[,] array2DInitialized = { { 1, 2 }, { 3, 4 }, };
+*/
+
+int[,] array2DInitialized = { { 1, 2 }, { 3, 4 } };
 // [1] [2]
 // [3] [4]
 
-Console.WriteLine(array2DInitialized[0,0]);
+Console.WriteLine(array2DInitialized[0, 0]);
